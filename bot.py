@@ -1,20 +1,16 @@
+#Created by u/Vova_Xx
+
 import praw
 from random import choice
 
+#create a reddit app and paste in the necassary info
 reddit = praw.Reddit(
                     client_id='',
                     client_secret='',
-                    user_agent='Sauce Bot 1.0 by u/sauce-recipe-bot',
-                    username='username',
-                    password='pass'
+                    user_agent='',
+                    username='',
+                    password=''
                     )
-
-def check(comment):
-    phrase = ['sauce', 'saucy', 'dressing']
-    if [i for i in phrase] in comment.body:
-        return True
-    else:
-        return False
 
 recipes = [
     """
@@ -78,6 +74,11 @@ recipes = [
     - Stir in crushed tomatoes, basil, salt, and pepper. Simmer, stirring occasionally, until slightly thickened, 15 to 20 minutes. Serve immediately.
     """
 ]
+
+def check(comment):
+    phrase = ['sauce', 'saucy', 'dressing']
+    if [i for i in phrase] in comment.body:
+        return True
 
 sr = reddit.subreddit('dankmemes')
 
